@@ -1,0 +1,485 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+
+
+
+    <style>
+      .contact-block-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  margin: 10px 12px 20px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  background-size: 200% 200%;
+  transition: transform 0.3s ease;
+  animation: gradientMove 4s ease infinite;
+}
+
+.contact-block-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Instagram button style */
+.contact-insta-btn {
+  background-image: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+
+/* YouTube button style */
+.contact-yt-btn {
+  background-image: linear-gradient(45deg, #ff0000, #cc0000, #990000, #cc0000, #ff0000);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+        
+        .image1 {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .imag {
+            height: 110vh;
+            background-image: url('anu.png');
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        #bgVideo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: contrast(1.05) brightness(1.05);
+        }
+
+        #image2{
+           height: 53vh;
+           background-image: url("https://cdn.britannica.com/03/75503-050-F65891FA/volcanic-cone-Japan-Mount-Fuji.jpg");
+           background-repeat: no-repeat;
+           background-size: 100%;
+        }
+        #image3{
+           height: 100vh;
+           background-image:url('bgimg.png');
+           background-repeat: no-repeat;
+           background-size: 100%;
+         
+        }
+        /*
+        #content2{
+            padding-top: 200px;
+            text-align: center;
+            color: white;
+        }
+        .content3{
+            height: 44px;
+        }
+     
+
+        /* Content styling for text */
+        #content1 {
+            position: relative;
+            padding-top: 350px;
+            width: 100%; /* Adjust width as needed */
+            max-width: 690px; /* Max width for better control */
+            text-align: justify; /* Justified text */
+            color: rgb(9, 9, 9);
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 1px 1px 5px rgba(239, 216, 216, 0.5); /* Optional text shadow for better visibility */
+        }
+
+        .h {
+            margin-left: 50px;
+            font-size: 36px;
+            text-align: left;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: rgb(237, 5, 5);
+        }
+
+        .p1 {
+            margin-left: 50px;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .bg-card {
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 100%;
+    min-height: 500px;
+    position: relative;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-in-out;
+  }
+
+  .bg-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .bg-card .content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    color: #fff;
+  }
+
+  /* Decorative floating circles */
+  .floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    z-index: 0;
+  }
+
+/* Base style for all shapes */
+.animated-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.80;
+  z-index: 0;
+}
+
+/* Shape 1 - Orbiting animation */
+.shape1 {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #0c0c0c, #1a1a1a);
+  top: 40px;
+  left: 20px;
+  animation: orbit 10s linear infinite;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Shape 2 - Pulse animation */
+.shape2 {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #f20505, #ff0606);
+  bottom: 60px;
+  right: 30px;
+  animation: orbit 10s linear infinite;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Shape 3 - Diagonal float */
+
+
+/* Animations */
+@keyframes orbit {
+  0%   { transform: rotate(0deg) translateX(0px); }
+  50%  { transform: rotate(180deg) translateX(20px); }
+  100% { transform: rotate(360deg) translateX(0px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.25; }
+  50% { transform: scale(1.2); opacity: 0.4; }
+}
+
+@keyframes diagonalFloat {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -20px); }
+}
+
+@media (max-width: 768px) {
+  #bgd {
+    height: auto;
+  }
+}
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .contact-block {
+      display: flex;
+      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #000, #222);
+      color: #fff;
+    }
+
+    .contact-block-left {
+      width: 50%;
+      background: url('8.jpg') center center/cover no-repeat;
+      filter: grayscale(40%) brightness(0.9);
+    }
+
+    .contact-block-right {
+      width: 50%;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(5px);
+    }
+
+    .contact-block-title {
+      font-size: 42px;
+      color: #ff3333;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact-block-text {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      color: #ddd;
+    }
+
+    .contact-block-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    
+    </style>
+
+
+</head>
+<body data-bs-target=".navbar" data-bs-spy="scroll" data-bs-offset="50">
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px);">
+    <div class="container-fluid">
+        <button class="navbar-toggler" data-bs-target="#n1" data-bs-toggle="collapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="n1">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="btn btn-outline-secondary text-light mx-1 active" href="#home1">Homepage</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-secondary text-light mx-1" href="#me">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-secondary text-light mx-1" href="#bgd">Background</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-secondary text-light mx-1" href="#content2">Youtube</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-secondary text-light mx-1" href="#contact">Contact</a>
+                </li>
+            </ul>                  
+        </div>
+    </div>
+</nav>
+
+
+    <!-- <div id="image1">
+       
+            <h1 style="text-shadow: 2px 2px black;">Laugh | Vibe | Repeat</h1>
+            <h3>simple bootstrap template</h3>
+        </div>
+    </div> -->
+    <!-- <div class="image1" id="home1">
+        
+        <video autoplay muted  playsinline id="bgVideo">
+            <source src="vd2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+   
+    <div class="imag" id="me">
+        <div id="content1" class="animate__animated">
+            <h1 class="h">Content Creator | YouTuber | Movie Enthusiast </h1>
+            <p class="p1">I’m Anandhu V M, a creator driven by passion, rooted in culture, 
+                and inspired by everyday moments. Based in Venjaramoodu, Trivandrum, I bring
+                stories to life through YouTube videos, vlogs, cooking segments, and short-form
+                entertainment that reflect both creativity and authenticity.</p>
+        </div>
+    </div>
+ <!-- --------------------------------------------------------------------   education --------------------------------------------------------------------------------->
+<!--     
+ <section id="bgd" class="position-relative py-3" style="background-color: #f8f9fa;">    <!-- Shapes -->
+    <!-- <div class="animated-shape shape1"></div>
+    <div class="animated-shape shape2"></div>
+  
+    <div class="container">
+      <h1 class="text-center fw-bold mb-2 mt-5 py-3" style="color: #f90505;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        MY BACKGROUND
+      </h1>
+      <div class="row g-4 justify-content-center"> -->
+  
+       <!-- Degree Card -->
+<!-- <div class="col-md-6">
+  <div class="bg-card">
+    <div class="bg-card" style="background-image: url('clgme.JPG');">
+      <div class="content">
+        <h4 class="text-white">B.A. Malayalam & Mass Communication</h4>
+        <p class="text-light">St. Xavier's College Thumba | 2022 – 2025</p>
+        <p>Focused on media studies, literature, and visual media. Built a strong academic foundation in journalism and public communication.</p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+  
+        <!-- Assistant Director Card -->
+        <!-- <div class="col-md-6">
+          <div class="bg-card">
+            <div class="bg-card" style="background-image: url('shooot.jpeg');">
+            <div class="content">
+              <h4 class="text-white">Assistant Director</h4>
+              <p class="text-light">Theatre - A Myth of Reality | 2025</p>
+              <p class="text-light">
+                Worked in <strong>Sajin Babu's movie</strong> starring <strong>Rima Kallingal</strong>. Assisted in creative direction and set operations — real-world cinema exposure.
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+  
+      </div>
+    </div>
+  </section>
+   -->
+  <!-- <script> -->
+    <!-- // Simple scroll animation trigger
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    });
+  
+    document.querySelectorAll('.bg-card').forEach(card => {
+      observer.observe(card);
+    });
+  </script> -->
+    <!-- ------------------------------ -->
+ 
+<!-- Section: YouTube Video Showcase -->
+<!-- Google Font -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<div id="content2" style="margin-top: 70px; padding: 60px 20px; font-family: 'Manrope', sans-serif; background-color: #f5f7fa; text-align: center; color: #1a1a1a;">
+
+    <h1 style="font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 700; margin-bottom: 20px; letter-spacing: -0.5px;">
+        <span style="color: #f20505;">Anandhu VM</span> on YouTube
+    </h1>
+
+    <p style="max-width: 820px; margin: 0 auto 40px; font-size: 18px; line-height: 1.8; font-weight: 400; color: #2e2e2e;">
+        Discover a curated mix of visual storytelling through vlogs, creative short formats, travel narratives, food explorations, and cooking features. The Anandhu VM YouTube channel reflects a passion for documenting experiences with a cinematic and engaging touch.
+    </p>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px;">
+        <div style="flex: 1 1 300px; max-width: 700px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border-radius: 12px; overflow: hidden; background: #fff;">
+            <iframe width="100%" height="350" src="https://www.youtube.com/embed/IJ5X3zddRfc?si=RemXkUHLGtFRqGfB"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div style="flex: 1 1 300px; max-width: 700px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border-radius: 12px; overflow: hidden; background: #fff;">
+            <iframe width="100%" height="350" src="https://www.youtube.com/embed/h2RCXbo8F1U?si=FKqRyNxm7dAdKmyg"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <a href="https://youtube.com/@anandhu_vm?feature=shared"
+       style="display: inline-block;
+              margin-top: 30px;
+              padding: 14px 34px;
+              font-size: 16px;
+              font-weight: 600;
+              font-family: 'Manrope', sans-serif;
+              color: #fff;
+              background: linear-gradient(135deg, #f20505, #cc0000);
+              border: none;
+              border-radius: 30px;
+              text-decoration: none;
+              box-shadow: 0 6px 18px rgba(242, 5, 5, 0.2);
+              transition: all 0.3s ease-in-out;
+              transform: scale(1);"
+       onmouseover="this.style.background='linear-gradient(135deg, #d90404, #990000)'; this.style.transform='scale(1.05)'"
+       onmouseout="this.style.background='linear-gradient(135deg, #f20505, #cc0000)'; this.style.transform='scale(1)'">
+       Visit My Channel
+    </a>
+</div>
+
+
+</div>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+
+<div class="contact-block" id="contact">
+  <div class="contact-block-left"></div>
+  <div class="contact-block-right">
+    <h1 class="contact-block-title">Let's Connect!</h1>
+    <div class="contact-block-text">
+      Thanks for visiting! If you're into creativity, vlogs, fun with friends, thrills, cooking & beyond, join the journey.
+      <br><br>
+      Follow me on Instagram and subscribe on YouTube — let’s grow together!
+    </div>
+    <div class="contact-block-buttons">
+      <a href="https://www.instagram.com/anandhu_vm.__?igsh=bWt4ajZ1Y2x5dW9p&utm_source=qr" target="_blank" class="contact-block-btn contact-insta-btn">
+        <span>Follow on Instagram</span>
+      </a>
+      <a href="https://youtube.com/@anandhu_vm?sub_confirmation=1" target="_blank" class="contact-block-btn contact-yt-btn">
+        <span>Subscribe on YouTube</span>
+      </a>
+      <div class="contact-block-email">
+        <p>You can contact me at:
+        <a href="mailto:anandhuvmofficial">anandhuvmofficial@gmail.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script> -->
+  <!-- function sendGmail() {
+    const email = "youremail@gmail.com"; // Replace with your Gmail address
+    const subject = encodeURIComponent("Let's Collaborate!");
+    const body = encodeURIComponent("Hi Anandhu,\n\nI just saw your page and would love to connect!");
+    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+    window.open(gmailURL, '_blank');
+  }
+</script>
+
+</body>
+</html>  --> 
+
