@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Document</title>
+  <title>Responsive Design Page</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
@@ -14,43 +14,37 @@
 
   <!-- Animate CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; }
+    /* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .navbar { background-color: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px); }
+body {
+  font-family: 'Poppins', sans-serif;
+}
 
-    .imag1 {
-      height: 100vh;
-      width: 100%;
-      background-image: url('nm.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-    }
+/* Navbar */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+}
 
-    /* .imag {
-      min-height: 100vh;
-       width: 100%;
-      background-image: url('anu2.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-    }
+/* Background Sections */
+.imag1 {
+  height: 100vh;
+  width: 100%;
+  background-image: url('nm.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
-    #content1 {
-      position: relative;
-      padding-top: 400px;
-      max-width: 690px;
-      color: #090909;
-      text-align: justify;
-      font-family: 'Poppins', sans-serif;
-      text-shadow: 1px 1px 5px rgba(239, 216, 216, 0.5);
-    } */
 .imag {
   position: relative;
   min-height: 100vh;
@@ -61,32 +55,40 @@
   background-position: center;
   padding: 40px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Top Center Title */
 .main-title {
-  font-size: 150px;
+  font-size: 8vw;
   font-weight: bold;
   text-align: center;
   color: red;
-  margin-top: 0;
-  margin-bottom: 30px;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-bottom: 20px;
+  z-index: 2;
 }
 
-.content-wrapper {
-  max-width: 650px;
+/* Content Area - left half width */
+.content-area {
+  width: 50%;               /* limit width to half the screen */
   color: #000;
-  font-family: 'Poppins', sans-serif;
   text-align: left;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  margin-left: 0;
+  margin-top: 50px;        /* fixed margin */
+  margin-bottom: auto;
 }
 
+
+/* Subhead & Bio */
 .subtitle {
   font-size: 28px;
   font-weight: 600;
   color: red;
   margin-bottom: 20px;
-  margin-top: 7rem;
 }
 
 .bio {
@@ -96,232 +98,356 @@
   text-align: justify;
 }
 
+/* Image at bottom right */
 .profile-img {
   position: absolute;
   bottom: 0;
   right: 0;
-  height: 90vh;
+  max-height: 90vh;
   object-fit: contain;
   z-index: 1;
+  pointer-events: none;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 12vw;
+  }
+
+  .content-area {
+    width: 90%;            /* on smaller screens, let text use most width */
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 22px;
+  }
+
+  .bio {
+    font-size: 18px;
+  }
+
+  .profile-img {
+    max-height: 250px;
+    right: 10px;
+  }
 }
 
 
-    .h {
-      margin-left: 50px;
-      font-size: 36px;
-      font-weight: 600;
-      margin-bottom: 20px;
-      color: rgb(237, 5, 5);
-    }
 
-    .p1 {
-      margin-left: 50px;
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
+/* Paragraph and Heading */
+.h {
+  margin-left: 50px;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: rgb(237, 5, 5);
+}
 
-    .bg-card {
-      background-size: cover;
-      background-position: center;
-      border-radius: 15px;
-      overflow: hidden;
-      min-height: 500px;
-      position: relative;
-      box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.2);
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s ease-in-out;
-      margin-bottom: 24px;
-    }
-    .bg-card.animate { opacity: 1; transform: translateY(0); }
-    .bg-card .content {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.6);
-      padding: 20px;
-      color: #fff;
-    }
+.p1 {
+  margin-left: 50px;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
 
-    .animated-shape {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.8;
-      z-index: 0;
-    }
-    .shape1 {
-      width: 100px; height: 100px;
-      background: radial-gradient(circle, #0c0c0c, #1a1a1a);
-      top: 40px; left: 20px;
-      animation: orbit 10s linear infinite;
-      box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
-    }
-    .shape2 {
-      width: 80px; height: 80px;
-      background: radial-gradient(circle, #f20505, #ff0606);
-      bottom: 60px; right: 30px;
-      animation: orbit 10s linear infinite;
-      box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
-    }
-    @keyframes orbit {
-      0% { transform: rotate(0deg) translateX(0px); }
-      50% { transform: rotate(180deg) translateX(20px); }
-      100% { transform: rotate(360deg) translateX(0px); }
-    }
+/* Animated Cards */
+.bg-card {
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  overflow: hidden;
+  min-height: 500px;
+  position: relative;
+  box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+  margin-bottom: 24px;
+}
 
-    .contact-block {
-      display: flex;
-      height: 100vh;
-      background: linear-gradient(to right, #000, #222);
-      color: #fff;
-      flex-wrap: wrap;
-    }
-    .contact-block-left, .contact-block-right {
-      flex: 1 1 50%;
-      min-width: 300px;
-    }
-    .contact-block-left {
-      background: url('8.jpg') center/cover no-repeat;
-      filter: grayscale(40%) brightness(0.9);
-      min-height: 350px;
-    }
-    .contact-block-right {
-      padding: 60px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(5px);
-      min-height: 350px;
-    }
+.bg-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .contact-block-title {
-      font-size: 42px;
-      color: #ff3333;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .contact-block-text {
-      font-size: 18px;
-      line-height: 1.7;
-      margin-bottom: 40px;
-      color: #ddd;
-    }
-    .contact-block-buttons {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .contact-block-btn {
-      display: inline-block;
-      padding: 12px 28px;
-      margin: 10px 12px 20px 0;
-      font-size: 16px;
-      font-weight: 600;
-      color: #fff;
-      border-radius: 30px;
-      text-decoration: none;
-      background-size: 200% 200%;
-      transition: transform 0.3s ease;
-      animation: gradientMove 4s ease infinite;
-    }
-    .contact-block-btn:hover { transform: scale(1.05);}
-    .contact-insta-btn {
-      background-image: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-    }
-    .contact-yt-btn {
-      background-image: linear-gradient(45deg, #ff0000, #cc0000, #990000, #cc0000, #ff0000);
-    }
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    .contact-block-email {
-      font-size: 16px;
-      color: #fff;
-      margin-left: 10px;
-      margin-top: 10px;
-    }
-    .contact-block-email a {
-      color: #f20505;
-      text-decoration: underline;
-    }
+.bg-card .content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  color: #fff;
+}
 
-    /* -------- Responsive Styles -------- */
-    @media (max-width: 1200px) {
-      #content1 { padding-top: 250px; max-width: 90vw; }
-    }
-    @media (max-width: 992px) {
-      .h { font-size: 28px; margin-left: 20px;}
-      .p1 { font-size: 16px; margin-left: 20px;}
-      #content1 { padding-top: 140px; }
-      .contact-block-title { font-size: 32px;}
-      .contact-block-right { padding: 40px 20px;}
-      .bg-card .content { padding: 14px; font-size: 15px; }
-    }
-    @media (max-width: 768px) {
-      .navbar-nav { flex-direction: column; align-items: flex-start;}
-      .navbar { padding: 8px 0; }
-      .imag1 { height: 38vh; min-height: 110px;}
-      #content1 { padding-top: 60px; max-width: 100vw; font-size: 16px; }
-      .h { font-size: 19px; margin-left: 10px;}
-      .p1 { font-size: 13px; margin-left: 10px;}
-      .bg-card { min-height: 260px;}
-      #bgd { padding: 10px 0; }
-      .contact-block { flex-direction: column; height: auto;}
-      .contact-block-left, .contact-block-right { flex: 1 1 100%; min-width: unset; min-height: 220px;}
-      .contact-block-left { min-height: 180px;}
-      .contact-block-right { padding: 24px 10px;}
-      .contact-block-title { font-size: 22px;}
-      .contact-block-email { font-size: 13px;}
-    }
-    @media (max-width: 576px) {
-      .navbar { font-size: 14px;}
-      .imag1 { height: 28vh; min-height: 80px;}
-      .bg-card { min-height: 140px;}
-      #content2 { padding: 30px 4px !important; margin-top: 32px;}
-      .contact-block-right { padding: 12px 3vw;}
-      .contact-block-email { font-size: 11px;}
-    }
+/* Decorative Shapes */
+.animated-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.8;
+  z-index: 0;
+}
+
+.shape1 {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #0c0c0c, #1a1a1a);
+  top: 40px;
+  left: 20px;
+  animation: orbit 10s linear infinite;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+.shape2 {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #f20505, #ff0606);
+  bottom: 60px;
+  right: 30px;
+  animation: orbit 10s linear infinite;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(0px); }
+  50% { transform: rotate(180deg) translateX(20px); }
+  100% { transform: rotate(360deg) translateX(0px); }
+}
+
+/* Contact Block Section */
+.contact-block {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh; /* full viewport height */
+  background: linear-gradient(to right, #000, #222);
+  color: #fff;
+  overflow: hidden;
+}
+
+.contact-block-left,
+.contact-block-right {
+  flex: 1 1 50%;
+  min-width: 300px;
+  height: 100vh; /* full height */
+  box-sizing: border-box;
+}
+
+.contact-block-left {
+  flex: 1 1 50%;
+  min-height: 400px; /* gives image container enough height */
+  background: url('8.jpg') center center / cover no-repeat;
+filter:none; /* Just slightly gray and full brightness */ 
+  background-color: #111; /* fallback background */
+
+}
+
+.contact-block-right {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.contact-block-title {
+  font-size: 42px;
+  color: #ff3333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-block-text {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  color: #ddd;
+}
+
+.contact-block-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.contact-block-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  background-size: 200% 200%;
+  transition: transform 0.3s ease;
+  animation: gradientMove 4s ease infinite;
+}
+
+.contact-block-btn:hover {
+  transform: scale(1.05);
+}
+
+.contact-insta-btn {
+  background-image: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+
+.contact-yt-btn {
+  background-image: linear-gradient(45deg, #ff0000, #cc0000, #990000, #cc0000, #ff0000);
+}
+
+.contact-block-email {
+  font-size: 16px;
+  color: #fff;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.contact-block-email a {
+  color: #f20505;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .contact-block {
+    flex-direction: column;
+    height: auto; /* let height adjust */
+  }
+
+  .contact-block-left,
+  .contact-block-right {
+    flex: 1 1 100%;
+    min-width: auto;
+    height: 50vh;  /* increase height to half viewport for image */
+  }
+
+  .contact-block-left {
+    background-size: contain; /* use contain to show full image */
+    background-position: center center;
+  }
+
+  .contact-block-right {
+    padding: 30px 20px;
+    height: auto;
+  }
+
+  .contact-block-title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .contact-block-text {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .contact-block-buttons {
+    justify-content: center;
+  }
+
+  .contact-block-email {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+/* Button gradient animation */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .main-title { font-size: 10vw; }
+}
+
+@media (max-width: 992px) {
+  .h { font-size: 28px; margin-left: 20px; }
+  .p1 { font-size: 16px; margin-left: 20px; }
+  .contact-block-title { font-size: 32px; }
+  .contact-block-right { padding: 40px 20px; }
+}
+
+@media (max-width: 768px) {
+  .navbar-nav { flex-direction: column; align-items: flex-start; }
+  .navbar { padding: 8px 0; }
+  .imag1 { height: 38vh; min-height: 110px; }
+  .main-title { font-size: 12vw; }
+  .contact-block { flex-direction: column; }
+  .contact-block-left,
+  .contact-block-right { flex: 1 1 100%; }
+}
+
+@media (max-width: 576px) {
+  .subtitle { font-size: 22px; }
+  .bio { font-size: 16px; }
+  .contact-block-text { font-size: 16px; }
+}
+
   </style>
 </head>
 
 <body data-bs-target=".navbar" data-bs-spy="scroll" data-bs-offset="50">
-  <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
-    <div class="container-fluid">
-      <button class="navbar-toggler" data-bs-target="#n1" data-bs-toggle="collapse">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="n1">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1 active" href="#home1">Homepage</a></li>
-          <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1" href="#me">About</a></li>
-          <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1" href="#bgd">Background</a></li>
-          <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1" href="#content2">Youtube</a></li>
-          <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1" href="#contact">Contact</a></li>
-        </ul>
-      </div>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#n1">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="n1">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1 active" href="#home1">Homepage</a></li>
+        <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1" href="#me">About</a></li>
+        <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1" href="#bgd">Background</a></li>
+        <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1" href="#content2">Youtube</a></li>
+        <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1" href="#contact">Contact</a></li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
+
 
   <div class="imag1" id="home1"></div>
-   
+
 <div class="imag" id="me">
   <h1 class="main-title">ANANDHU VM</h1>
-  
-  <div class="content-wrapper">
-    <h2 class="subtitle">Content Creator | YouTuber | Movie Enthusiast</h2>
-    <p class="bio">
-      I’m Anandhu V M, a creator driven by passion, rooted in culture, and inspired by everyday moments. Based in Venjaramoodu, Trivandrum, I bring stories to life through YouTube videos, vlogs, cooking segments, and short-form entertainment that reflect both creativity and authenticity.
-    </p>
-  </div>
 
-  <img src="my.png" alt="Anandhu" class="profile-img">
+  <div class="page-layout">
+    <div class="content-area">
+      <h2 class="subtitle">Content Creator | YouTuber | Movie Enthusiast</h2>
+      <p class="bio">
+        I’m Anandhu V M, a creator driven by passion, rooted in culture, and inspired by everyday moments. Based in Venjaramoodu, Trivandrum, I bring stories to life through YouTube videos, vlogs, cooking segments, and short-form entertainment that reflect both creativity and authenticity.
+      </p>
+    </div>
+
+    <img src="my.png" alt="Anandhu" class="profile-img" />
+  </div>
 </div>
+
+
+
 
 
   
@@ -359,7 +485,7 @@
           </div>
         </div>
         <div class="col-lg-6 col-md-12">
-          <div class="bg-card" style="background-image: url('shoot2.JPG');">
+          <div class="bg-card" style="background-image: url('shot1.JPG');">
             <div class="content">
               <h4 class="text-white dynamic-text"
                   data-phone="Assistant Director"
@@ -422,33 +548,50 @@
             data-tab="Anandhu VM"
             data-lap="Anandhu VM">Anandhu VM</span> on YouTube
     </h1>
-    <p style="max-width: 820px; margin: 0 auto 40px; font-size: 18px; line-height: 1.8; font-weight: 400; color: #2e2e2e;"
-       class="dynamic-text"
-       data-phone="Watch vlogs, fun shorts, travel, food and more on my channel. Join for cinematic stories and real moments!"
-       data-tab="Discover a curated mix of visual storytelling: vlogs, shorts, travel and food. My channel is all about experiences!"
-       data-lap="Discover a curated mix of visual storytelling through vlogs, creative short formats, travel narratives, food explorations, and cooking features. The Anandhu VM YouTube channel reflects a passion for documenting experiences with a cinematic and engaging touch.">
-      Discover a curated mix of visual storytelling through vlogs, creative short formats, travel narratives, food explorations, and cooking features. The Anandhu VM YouTube channel reflects a passion for documenting experiences with a cinematic and engaging touch.
-    </p>
-    <div class="container">
-      <div class="row justify-content-center g-3">
-        <div class="col-md-6 col-12 d-flex justify-content-center">
-          <div style="flex: 1 1 350px; max-width: 700px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border-radius: 12px; overflow: hidden; background: #fff;">
-            <iframe width="100%" height="320" src="https://www.youtube.com/embed/IJ5X3zddRfc?si=RemXkUHLGtFRqGfB"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="col-md-6 col-12 d-flex justify-content-center">
-          <div style="flex: 1 1 300px; max-width: 700px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border-radius: 12px; overflow: hidden; background: #fff;">
-            <iframe width="100%" height="320" src="https://www.youtube.com/embed/h2RCXbo8F1U?si=FKqRyNxm7dAdKmyg"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
+ <!-- Include this in your <head> -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- Elegant Paragraph -->
+<p style="max-width: 850px; margin: 0 auto 50px; padding: 20px 30px;
+          font-family: 'Inter', sans-serif; font-size: 19px; line-height: 1.8; font-weight: 500;
+          color: #1f1f1f; ">
+  Discover a curated mix of visual storytelling through vlogs, creative short formats, travel narratives, food explorations, and cooking features. The <strong style="color: #f20505;">Anandhu VM</strong> YouTube channel reflects a passion for documenting experiences with a cinematic and engaging touch.
+</p>
+
+   <div class="container">
+  <div class="row justify-content-center g-3">
+
+    <div class="col-md-6 col-12 d-flex justify-content-center">
+      <iframe 
+        width="100%" 
+        height="330" 
+        src="https://www.youtube.com/embed/qna0TBZ7iqk?si=NcTUSIn6lQStZbHg"
+        title="YouTube video player" 
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen
+        style="border-radius: 12px; overflow: hidden;"
+      ></iframe>
     </div>
+
+    <div class="col-md-6 col-12 d-flex justify-content-center">
+      <iframe 
+        width="100%" 
+        height="330" 
+        src="https://www.youtube.com/embed/h2RCXbo8F1U?si=FKqRyNxm7dAdKmyg"
+        title="YouTube video player" 
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen
+        style="border-radius: 12px; overflow: hidden;"
+      ></iframe>
+    </div>
+
+  </div>
+</div>
+
     <a href="https://youtube.com/@anandhu_vm?feature=shared"
        style="display: inline-block;
               margin-top: 30px;
