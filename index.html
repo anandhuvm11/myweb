@@ -61,7 +61,6 @@ body {
 
 /* Top Center Title */
 .main-title {
-  font-size: 8vw;
   font-weight: bold;
   text-align: center;
   color: red;
@@ -70,10 +69,8 @@ body {
   z-index: 2;
 
   white-space: nowrap;        /* Prevent line break */
-  overflow: hidden;           /* Hide overflow */
-  text-overflow: ellipsis;    /* Optional: show "..." if text too long */
+  font-size: clamp(16px, 8vw, 80px); /* Responsive font size */
 }
-
 
 /* Content Area - left half width */
 .content-area {
