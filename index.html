@@ -68,7 +68,12 @@ body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin-bottom: 20px;
   z-index: 2;
+
+  white-space: nowrap;        /* Prevent line break */
+  overflow: hidden;           /* Hide overflow */
+  text-overflow: ellipsis;    /* Optional: show "..." if text too long */
 }
+
 
 /* Content Area - left half width */
 .content-area {
@@ -418,10 +423,10 @@ filter:none; /* Just slightly gray and full brightness */
     </button>
     <div class="collapse navbar-collapse" id="n1">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1 active" href="#home1">Homepage</a></li>
-        <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1" href="#me">About</a></li>
+        <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1 active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1" href="#about">About</a></li>
         <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1" href="#bgd">Background</a></li>
-        <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1" href="#content2">Youtube</a></li>
+        <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1" href="#yt">Youtube</a></li>
         <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1" href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -429,9 +434,9 @@ filter:none; /* Just slightly gray and full brightness */
 </nav>
 
 
-  <div class="imag1" id="home1"></div>
+  <div class="imag1" id="home"></div>
 
-<div class="imag" id="me">
+<div class="imag" id="about">
   <h1 class="main-title">ANANDHU VM</h1>
 
   <div class="page-layout">
@@ -541,7 +546,7 @@ filter:none; /* Just slightly gray and full brightness */
     window.addEventListener('resize', setDynamicText);
   </script>
 
-  <div id="content2" style="margin-top: 70px; padding: 60px 20px; font-family: 'Manrope', sans-serif; background-color: #f5f7fa; text-align: center; color: #1a1a1a;">
+  <div id="yt" style="margin-top: 70px; padding: 60px 20px; font-family: 'Manrope', sans-serif; background-color: #f5f7fa; text-align: center; color: #1a1a1a;">
     <h1 style="font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 700; margin-bottom: 20px; letter-spacing: -0.5px;">
       <span style="color: #f20505;" class="dynamic-text"
             data-phone="Anandhu VM"
