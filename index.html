@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Anandhu VM</title>
+  <title>Responsive Design Page</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
@@ -19,11 +19,90 @@
 
   <style>
     /* Reset and Base Styles */
+    
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+/* ------------------------------------ */
+/* Scroll to top button */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: bold;
+  border: none;
+  background: linear-gradient(145deg, #f20505, #cc0000);
+  color: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+#scrollTopBtn:hover {
+  background-color: #cc0000;
+  transform: scale(1.1);
+}
+
+/* Add animated floating effect on icons/buttons */
+.contact-block-btn {
+  animation: floatPulse 3s ease-in-out infinite;
+}
+@keyframes floatPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Add neon hover to nav buttons */
+.navbar-nav .btn:hover {
+  background-color: rgba(255,255,255,0.2);
+  border-color: #f20505;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+  transition: 0.3s ease;
+}
+
+/* Glassmorphism for .bg-card */
+.bg-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Glass card hover pop */
+.bg-card:hover {
+  transform: scale(1.03);
+  transition: 0.4s ease;
+}
+
+/* Smooth fade-up effect for any .fade-up */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s forwards;
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* ----------------------------------- */
+
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -71,6 +150,7 @@ body {
   white-space: nowrap;        /* Prevent line break */
   font-size: clamp(16px, 8vw, 80px); /* Responsive font size */
 }
+
 
 /* Content Area - left half width */
 .content-area {
@@ -241,7 +321,7 @@ body {
   min-height: 400px; /* gives image container enough height */
   background: url('8.jpg') center center / cover no-repeat;
 filter:none; /* Just slightly gray and full brightness */ 
-  background-color: #111; /* fallback background */
+  background-color: #fffbfbe6; /* fallback background */
 
 }
 
@@ -250,7 +330,8 @@ filter:none; /* Just slightly gray and full brightness */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.4);
+  /* background: rgba(244, 242, 242, 0.899); */
+  background-color: #fffbfbe6;
   backdrop-filter: blur(5px);
   box-sizing: border-box;
   height: 100%;
@@ -258,7 +339,7 @@ filter:none; /* Just slightly gray and full brightness */
 
 .contact-block-title {
   font-size: 42px;
-  color: #ff3333;
+  color: #ee0a0a;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -268,7 +349,7 @@ filter:none; /* Just slightly gray and full brightness */
   font-size: 18px;
   line-height: 1.7;
   margin-bottom: 40px;
-  color: #ddd;
+  color: #000000;
 }
 
 .contact-block-buttons {
@@ -305,13 +386,13 @@ filter:none; /* Just slightly gray and full brightness */
 
 .contact-block-email {
   font-size: 16px;
-  color: #fff;
+  color: #000000;
   margin-left: 10px;
   margin-top: 10px;
 }
 
 .contact-block-email a {
-  color: #f20505;
+  color: #ff3333;
   text-decoration: underline;
 }
 
@@ -407,7 +488,126 @@ filter:none; /* Just slightly gray and full brightness */
   .bio { font-size: 16px; }
   .contact-block-text { font-size: 16px; }
 }
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
+/* 
+.dark-mode .navbar {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+} */
 
+.dark-mode .text-light,
+.dark-mode .btn-outline-secondary,
+.dark-mode .nav-link,
+/* .dark-mode .bio, */
+.dark-mode .p1,
+.dark-mode .p2,
+.dark-mode .content,
+.dark-mode .contact-block-email a,
+.dark-mode .contact-block-text,
+/* .dark-mode .subtitle, */
+.dark-mode .h_yt,
+.dark-mode .h {
+  color: #ffffff !important;
+}
+.dark-mode .shape1{
+background: radial-gradient(circle, #fcfafa, #fbf1f1);
+}
+.dark-mode .btn-outline-secondary {
+  border-color: #ffffff !important;
+}
+
+.dark-mode .btn-outline-secondary:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.dark-mode #yt,
+.dark-mode .imag,
+.dark-mode .imag1,
+.dark-mode .contact-block-right,
+.dark-mode section,
+.dark-mode .bg-card .content {
+  background-color: #1e1e1e !important;
+}
+.dark-mode .contact-block-left {
+    background-color: #1e1e1e !important;
+}
+
+.dark-mode .bg-card {
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode a {
+  color: #faf5f5 !important;
+}
+
+.dark-mode a.mymail{
+  color: #ff3333 !important;
+}
+
+/* .dark-mode .p2 {
+  color: #faf5f5 !important;
+}  */
+
+/* .dark-mode h1 {
+  color: #ff3333 !important;
+}  */
+
+.dark-mode .contact-block-email {
+    color:  #faf5f5 !important;
+}
+.floating-cube {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 30px rgba(0,0,0,0.05);
+      animation: floatCube 6s ease-in-out infinite;
+    }
+    .cube-1 { top: 10%; left: 5%; animation-delay: 0s; }
+    .cube-2 { bottom: 10%; right: 5%; animation-delay: 2s; }
+    .cube-3 { top: 50%; right: 10%; animation-delay: 4s; }
+
+    @keyframes floatCube {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+      100% { transform: translateY(0); }
+    }
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .gradient-text {
+      background: linear-gradient(to right, #e60073, #ff3300);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+    .glow-button {
+      background: linear-gradient(45deg, #f20505, #cc0000);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-weight: 600;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(242, 5, 5, 0.5);
+    }
+    .glow-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(242, 5, 5, 0.8);
+    }
   </style>
 </head>
 
@@ -425,6 +625,9 @@ filter:none; /* Just slightly gray and full brightness */
         <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1" href="#bgd">Background</a></li>
         <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1" href="#yt">Youtube</a></li>
         <li class="nav-item"><a class="btn btn-outline-secondary text-light mx-1" href="#contact">Contact</a></li>
+         <li class="nav-item">
+    <button id="darkModeToggle" class="btn btn-outline-secondary text-light mx-1">🌙 Dark Mode</button>
+  </li>
       </ul>
     </div>
   </div>
@@ -544,7 +747,7 @@ filter:none; /* Just slightly gray and full brightness */
   </script>
 
   <div id="yt" style="margin-top: 70px; padding: 60px 20px; font-family: 'Manrope', sans-serif; background-color: #f5f7fa; text-align: center; color: #1a1a1a;">
-    <h1 style="font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 700; margin-bottom: 20px; letter-spacing: -0.5px;">
+    <h1 class="h_yt" style="font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.5px;">
       <span style="color: #f20505;" class="dynamic-text"
             data-phone="Anandhu VM"
             data-tab="Anandhu VM"
@@ -554,9 +757,9 @@ filter:none; /* Just slightly gray and full brightness */
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
 <!-- Elegant Paragraph -->
-<p style="max-width: 850px; margin: 0 auto 50px; padding: 20px 30px;
+<p style="max-width: 850px; margin: 0 auto 20px; padding: 20px 20px;
           font-family: 'Inter', sans-serif; font-size: 19px; line-height: 1.8; font-weight: 500;
-          color: #1f1f1f; ">
+          color: black " class="p2">
   Discover a curated mix of visual storytelling through vlogs, creative short formats, travel narratives, food explorations, and cooking features. The <strong style="color: #f20505;">Anandhu VM</strong> YouTube channel reflects a passion for documenting experiences with a cinematic and engaging touch.
 </p>
 
@@ -641,14 +844,37 @@ filter:none; /* Just slightly gray and full brightness */
             data-phone="YouTube"
             data-tab="YouTube"
             data-lap="Subscribe on YouTube">Subscribe on YouTube</span>
-        </a>
+        </a><br>
         <div class="contact-block-email">
-           You can contact me at:
-            <a href="mailto:anandhuvmofficial@gmail.com">anandhuvmofficial@gmail.com</a>
+           You can contact me at : 
+            <a class="mymail" href="mailto:anandhuvmofficial@gmail.com">anandhuvmofficial@gmail.com</a>
         </div>
       </div>
     </div>
   </div>
+  <!-- Scroll to Top Button -->
+<button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">↑</button>
+<script>
+  // Scroll To Top button visibility
+  const scrollBtn = document.getElementById("scrollTopBtn");
+  window.onscroll = () => {
+    scrollBtn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
+  };
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Fade-in elements on scroll
+  const fadeUps = document.querySelectorAll('.fade-up');
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('animate');
+    });
+  });
+  fadeUps.forEach(el => fadeObserver.observe(el));
+</script>
+
   <script>
     function sendGmail() {
       const email = "anandhuvmofficial@gmail.com"; // Replace with your Gmail address
@@ -658,5 +884,23 @@ filter:none; /* Just slightly gray and full brightness */
       window.open(gmailURL, '_blank');
     }
   </script>
+  <script>
+  const toggleBtn = document.getElementById('darkModeToggle');
+  const savedMode = localStorage.getItem('darkMode') === 'true';
+
+  function applyDarkMode(active) {
+    document.body.classList.toggle('dark-mode', active);
+    toggleBtn.innerHTML = active ? '☀️' : '🌙';
+    localStorage.setItem('darkMode', active);
+  }
+
+  applyDarkMode(savedMode);
+
+  toggleBtn.addEventListener('click', () => {
+    const isDark = document.body.classList.contains('dark-mode');
+    applyDarkMode(!isDark);
+  });
+</script>
+
 </body>
 </html>
